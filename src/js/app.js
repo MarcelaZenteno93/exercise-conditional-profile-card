@@ -39,24 +39,28 @@ function render(variables = {}) {
           <h1>${variables.name ? variables.name : ""} ${
     variables.lastName ? variables.lastName : ""
   }</h1>
-  <h2>${variables.role ? variables.role : ""}</h2>
-  <h3>${variables.city ? variables.city : ""}${
-    variables.city && variables.country ? ", " : ""
-  }${variables.country ? variables.country : ""}</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/${
-              variables.twitter
-            }"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${
-              variables.github
-            }"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/${
-              variables.linkedin
-            }"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/${
-              variables.instagram
-            }"><i class="fab fa-instagram"></i></a></li>
-          </ul>
+  <ul class="${variables.socialMediaPosition}">
+  ${
+    variables.twitter
+      ? `<li><a href="${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
+      : ""
+  }
+  ${
+    variables.github
+      ? `<li><a href="${variables.github}"><i class="fab fa-github"></i></a></li>`
+      : ""
+  }
+  ${
+    variables.linkedin
+      ? `<li><a href="${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
+      : ""
+  }
+  ${
+    variables.instagram
+      ? `<li><a href="${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
+      : ""
+  }
+</ul>
         </div>
     `;
 }
